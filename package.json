@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "npx nodemon",
+    "start:dev": "npx nodemon",
     "build": "npx tsc",
-    "start": "npm run build && build/main",
+    "start:prod": "npm run build && node build/main",
     "lint": "npx eslint ./src",
     "format": "npx eslint ./src --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -27,6 +27,7 @@
     "@types/node": "^18.11.15",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.1",
+    "dotenv": "^16.0.3",
     "eslint": "^8.29.0",
     "nodemon": "^2.0.20",
     "prettier": "^2.8.1",
