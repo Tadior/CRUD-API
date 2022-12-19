@@ -1,5 +1,5 @@
 export interface userApi {
-  id: string;
+  id?: string;
   username: string;
   age: number;
   hobbies: string[] | [];
