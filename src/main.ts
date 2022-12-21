@@ -2,14 +2,14 @@ import * as dotenv from 'dotenv';
 import http from 'http';
 import { v4 as uuidV4 } from 'uuid';
 import { validate as uuidValidate } from 'uuid';
-import { USERS } from './model/USERS.js';
-import { userApi } from './types/types.js';
-import { findUser } from './helpers/findUser.js';
-import { isBodyValid } from './helpers/isBodyValid.js';
+import { USERS } from '../src/model/USERS';
+import { userApi } from './types/types';
+import { findUser } from './helpers/findUser';
+import { isBodyValid } from './helpers/isBodyValid';
 
 dotenv.config();
 
-const server = http.createServer((request, response) => {
+export const server = http.createServer((request, response) => {
   response.writeHead(200, { 'Content-Type': 'application/json' });
   console.log(request.url);
   if (!request.url) {
@@ -77,7 +77,7 @@ const server = http.createServer((request, response) => {
         if (userIndex !== -1) {
           USERS[userIndex] = { id: USERS[userIndex].id, ...bodyFull };
           response.statusCode = 200;
-          return response.end(JSON.stringify({ message: 'User was updated' }));
+          return response.end(JSON.stringify(USERS[userIndex]));
         } else {
           response.statusCode = 404;
           response.end(JSON.stringify({ error: "User with such id is't found" }));
