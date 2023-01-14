@@ -6,7 +6,7 @@
   "scripts": {
     "start:dev": "nodemon ./src/main.ts",
     "start:prod": "npm run build && node build/main",
-    "start:multi": "nodemon ./src/cluster/cluster.ts",
+    "start:multi": "nodemon ./src/cluster.ts",
     "build": "ts-node webpack.config.ts && webpack ",
     "lint": "npx eslint ./src",
     "format": "npx eslint ./src --fix",
