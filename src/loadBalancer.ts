@@ -3,6 +3,7 @@ import os from 'node:os';
 import cluster, { Worker } from 'node:cluster';
 import http from 'node:http';
 import { userApi } from './types/types';
+config();
 
 const port = process.env.PORT || 4000;
 

@@ -2,7 +2,7 @@ import { config } from 'dotenv';
 import { Server } from './server';
 import cluster from 'node:cluster';
 import { LoadBalancer } from './loadBalancer';
-
+config();
 const port = process.env.PORT || 4000;
 
 if (cluster.isPrimary) {
