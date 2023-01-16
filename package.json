@@ -1,0 +1,46 @@
+{
+  "name": "crud-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon ./src/main.ts",
+    "start:prod": "npm run build && node build/main",
+    "start:multi": "nodemon ./src/cluster.ts",
+    "build": "ts-node webpack.config.ts && webpack ",
+    "lint": "npx eslint ./src",
+    "format": "npx eslint ./src --fix",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tadior/CRUD-API.git"
+  },
+  "keywords": [],
+  "author": "Dmitriy Zamulin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tadior/CRUD-API/issues"
+  },
+  "homepage": "https://github.com/Tadior/CRUD-API#readme",
+  "devDependencies": {
+    "@types/jest": "^29.2.4",
+    "@types/node": "^18.11.15",
+    "@types/uuid": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "axios": "^1.2.1",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.29.0",
+    "jest": "^29.3.1",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.1",
+    "ts-jest": "^29.0.3",
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4",
+    "uuid": "^9.0.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
